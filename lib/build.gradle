@@ -1,0 +1,33 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+    id 'kotlinx-serialization'
+}
+
+android {
+    namespace 'de.inovex.blog.aidldemo.chatbot.lib'
+    compileSdk 33
+
+    defaultConfig {
+        minSdk 33
+        targetSdk 33
+
+    }
+    buildFeatures {
+        aidl = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    api 'com.jakewharton.timber:timber:5.0.1'
+    api 'io.insert-koin:koin-android:3.4.0'
+    api 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1'
+}

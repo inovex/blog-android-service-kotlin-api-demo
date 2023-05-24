@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <permission
+        android:name="de.inovex.blog.aidldemo.chatbot.USES_BOT"
+        android:label="This permission is required to use the chatbot API"
+        android:protectionLevel="normal" />
+
+    <queries>
+        <package android:name="de.inovex.blog.aidldemo.chatbot.service" />
+    </queries>
+
+</manifest>

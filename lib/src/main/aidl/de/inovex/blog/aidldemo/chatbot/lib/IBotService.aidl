@@ -22,7 +22,6 @@ interface IBotService {
     void getBotDetails(in BotDetailsCallback callback);
 
     // Asynchronous get of messages
-void registerForMessages(in MessagesCallback callback);
-void unregisterForMessages(in MessagesCallback callback);
-
+    void registerForMessages(in MessagesCallback callback);
+    void unregisterForMessages(in MessagesCallback callback);
 }

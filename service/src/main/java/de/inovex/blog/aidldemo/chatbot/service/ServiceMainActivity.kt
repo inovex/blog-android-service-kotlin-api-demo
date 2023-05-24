@@ -52,7 +52,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import de.inovex.blog.aidldemo.chatbot.lib.BotDetails
 import de.inovex.blog.aidldemo.chatbot.lib.Message
 import de.inovex.blog.aidldemo.chatbot.lib.Sender
-import de.inovex.blog.aidldemo.chatbot.service.ui.theme.MyApplicationTheme
+import de.inovex.blog.aidldemo.chatbot.service.ui.theme.BotAppTheme
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.text.SimpleDateFormat
 import java.time.Instant
@@ -66,7 +66,7 @@ class ServiceMainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MyApplicationTheme {
+            BotAppTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background

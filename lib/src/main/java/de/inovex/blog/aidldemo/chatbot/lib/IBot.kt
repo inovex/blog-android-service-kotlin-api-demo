@@ -2,6 +2,9 @@ package de.inovex.blog.aidldemo.chatbot.lib
 
 import kotlinx.coroutines.flow.Flow
 
+/**
+ * Client facing interface to use our API.
+ */
 interface IBot {
     /**
      * Start a new chat session.

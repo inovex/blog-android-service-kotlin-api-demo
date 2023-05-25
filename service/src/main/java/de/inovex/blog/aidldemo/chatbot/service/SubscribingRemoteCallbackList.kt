@@ -9,6 +9,7 @@ import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.SharingCommand
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.shareIn
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
@@ -36,9 +37,9 @@ class SubscribingRemoteCallbackList<T : IInterface, U : Any>(
     private val sharedSourceCommandFlow: MutableStateFlow<SharingCommand> =
         MutableStateFlow(SharingCommand.STOP)
 
-    private val sharedSourceFlow: SharedFlow<U> = sourceFlow
-        .onEach { broadcast(it) }
+    private val sharedSourceFlow: Flow<U> = sourceFlow
         .shareIn(coroutineScope, { sharedSourceCommandFlow }, 1)
+        .onEach { broadcast(it) }
 
     suspend fun registerAndCollect(callback: T) {
         mutex.withLock {
